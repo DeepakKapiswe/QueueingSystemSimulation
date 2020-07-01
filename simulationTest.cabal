@@ -1,0 +1,73 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: aeca065ff4fa9249edc387a32586d151c1c50ab0b6bd914287faffe164689f6f
+
+name:           simulationTest
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/deepakkapiswe/simulationTest#readme>
+homepage:       https://github.com/deepakkapiswe/simulationTest#readme
+bug-reports:    https://github.com/deepakkapiswe/simulationTest/issues
+author:         Deepak Kapiswe
+maintainer:     deepakkapiswe@gmail.com
+copyright:      Deepak Kapiswe
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/deepakkapiswe/simulationTest
+
+library
+  exposed-modules:
+      RandomTimeGeneration
+      Simulation
+      Types
+  other-modules:
+      Paths_simulationTest
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , microlens
+    , microlens-th
+    , mwc-random
+  default-language: Haskell2010
+
+executable simulationTest-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_simulationTest
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , microlens
+    , microlens-th
+    , mwc-random
+    , simulationTest
+  default-language: Haskell2010
+
+test-suite simulationTest-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_simulationTest
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , microlens
+    , microlens-th
+    , mwc-random
+    , simulationTest
+  default-language: Haskell2010
